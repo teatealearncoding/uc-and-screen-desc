@@ -1,0 +1,18 @@
+{"lanes":["User","System"],
+ "nodes":[
+  {"id":"s","type":"start","lane":"User"},
+  {"id":"n1","type":"step","lane":"User","no":"1","text":"Select to create new Case"},
+  {"id":"n2","type":"step","lane":"System","no":"2","text":"Display corresponding screen"},
+  {"id":"n3","type":"step","lane":"User","no":"3","text":"Input data and select to Submit"},
+  {"id":"n4","type":"step","lane":"System","no":"4","text":"Show confirmation message"},
+  {"id":"d1","type":"decision","lane":"User"},
+  {"id":"n51","type":"step","lane":"User","no":"AF 1.1","text":"Select No"},
+  {"id":"n52","type":"step","lane":"User","no":"5","text":"Select Yes"},
+  {"id":"d2","type":"decision","lane":"System"},
+  {"id":"n6","type":"step","lane":"System","no":"6","text":"Submit Case"},
+  {"id":"ef","type":"step","lane":"System","no":"EF 1.1","text":"Show error message"},
+  {"id":"e","type":"end","lane":"System"},
+  {"id":"e2","type":"end","lane":"System"}],
+ "edges":[["s","n1"],["n1","n2"],["n2","n3"],["n3","n4"],["n4","d1"],
+  ["d1","n51","No"],["d1","n52","Yes"],["n51","n3"],["n52","d2"],
+  ["d2","n6","Saved"],["d2","ef","Failed"],["n6","e"],["ef","e2"]]}
